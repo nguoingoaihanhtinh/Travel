@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+    <script src="https://kit.fontawesome.com/2b51d69771.js" crossorigin="anonymous"></script>
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel = "stylesheet" href="style.css">
+    
+    <title>Foodie</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+</head>
+<header>
+    <a href="#" class="logo"><i class="fa-solid fa-utensils"></i>UncleLora</a>
+    <nav class="navbar">
+        <a class="active" href="#home">Home</a>
+        <a href="#dishes">Dishes</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#review">Review</a>
+        <a href="#order">Order</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+    </div>
+</header>
+<body>
+    <div class="head-page">
+        <h3>check out</h3>
+        <p><a href="index.html">home</a><span> / cart</span></p>
+    </div>
+    <section class="checkout">
+        <h1 class="heading">order summary</h1>
+    <form action="" method="post">
+        <div class="cart-items">
+            <h3>cart items</h3>
+            <p><span class="name">main dish 1</span><span class="price">$3</span></p>
+            <p><span class="name">main dish 2</span><span class="price">$3</span></p>
+            <p><span class="name">main dish 3</span><span class="price">$3</span></p>
+            <p class="grand-total"><span class="name">grand total:</span><span class="price">$9</span></p>
+            <a href="cart.html" class="btn">view cart</a>
+        </div>
+        <div class="user-info">
+            <h3>your info</h3>
+            <p><i class="fas fa-user"></i><span>khoa khung</span></p>
+            <p><i class="fas fa-phone"></i><span>123456</span></p>
+            <p><i class="fas fa-envelope"></i><span>khoakhung@gmail.com</span></p>
+            <a href="update_profile.html" class="btn">update info</a>
+            <h3>delivery address</h3>
+            <p><i class="fas fa-map-marker-alt"></i><span>Tran Phu</span></p>
+            <a href="update_address.html" class="btn">update address</a>
+            <select required name="method" class="box" >
+                <option value="" disabled selected>select payment method--</option>
+                <option value="cash on delivery">cash on delivery</option>
+                <option value="credit card">credit card</option>
+                <option value="paypal">paypal</option>
+            </select>
+            <input type="submit" value="place order" class="btn" style="width: 100%; background: gold; color: black; font-weight: bold;">
+        </div>
+    </form>
+    </section>
+    
+<!-- Footer section starts-->
+<section class="footer" id="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>locations</h3>
+            <a href="#">vietnam</a>
+            <a href="#">japan</a>
+            <a href="#">chinese</a>
+            <a href="#">united state</a>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">home</a>
+            <a href="#">dishes</a>
+            <a href="#">about</a>
+            <a href="#">menu</a>
+            <a href="#">review</a>
+            <a href="#">order</a>
+        </div>
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">lorakitchen@gmail.com</a>
+        </div>
+        <div class="box">
+            <h3>Follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+        </div>
+    </div>
+    <div class="credit">copy right @ 2024 by <span>Sir Lora</span></div>
+ </section>
+</body>
+
+</html>
