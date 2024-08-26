@@ -144,16 +144,7 @@ include 'user_header.php'
                 ?>
             </div>
             <span>$<?php echo htmlspecialchars($dish['price']); ?></span>
-            <form action="" method="post">
-                <!-- Hidden inputs to send product details -->
-                <input type="hidden" name="pid" value="<?= htmlspecialchars($dish['product_id']); ?>">
-                <input type="hidden" name="name" value="<?= htmlspecialchars($dish['product_name']); ?>">
-                <input type="hidden" name="price" value="<?= htmlspecialchars($dish['price']); ?>">
-                <input type="hidden" name="image" value="<?= htmlspecialchars($dish['image']); ?>">
-                <input type="number" name="quantity" class="qty" min="1" max="99" value="1" maxlength="2">
-                <!-- Add to Cart button -->
-                <button type="submit" class="btn" name="add_to_cart">add to cart</button>
-            </form>
+            <button type="submit" class="btn" name="add_to_cart">add to cart </button>
         </div>
         <?php 
                 }

@@ -1,3 +1,35 @@
+<?php
+include 'connect.php';
+session_start();
+
+if(isset($_SESSION['user_id'])){
+   $user_id = $_SESSION['user_id'];
+}else{
+   $user_id = '';
+};
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+    <script src="https://kit.fontawesome.com/2b51d69771.js" crossorigin="anonymous"></script>
+    <!-- <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> -->
+    <link rel = "stylesheet" href="phpstyle.css?v=<?php echo time(); ?>">
+   
+    <title>home</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    
+<?php 
+include 'user_header.php'
+?>
+
+
 
 
 
@@ -44,3 +76,14 @@
       }
       ?>
 </div>
+
+<?php 
+include 'footer.php';
+?>
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="js/admin_script.js?v=1"></script>
+</body>
+
+</html>

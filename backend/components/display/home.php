@@ -9,6 +9,7 @@ if(isset($_SESSION['user_id'])){
     $user_id = '';
 }
 
+include 'add_cart.php';
 ?>
 
 <?php

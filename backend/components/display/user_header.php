@@ -43,7 +43,11 @@ if(isset($message)){
         <!-- <a href="#" class="fas fa-heart"></a> -->
         <i class="fas fa-user" id="user-btn"></i>
     </div>
-
+    <form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="search-box" id="search-box">
+    <button type="submit" class="fas fa-search" name="search_btn"></button>
+    <i class="fas fa-times" id="close"></i>
+    </form>
 
     
     <div class="profile">
@@ -75,9 +79,4 @@ if(isset($message)){
          ?>
       </div>
 </header>
-<!-- search form-->
-<form action="" id="search-form">
-    <input type="search" placeholder="search here..." name="" id="search-box">
-    <label for="search-box" class="fas fa-search"></label>
-    <i class="fas fa-times" id="close"></i>
-</form>
+

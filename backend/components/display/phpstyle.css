@@ -706,7 +706,7 @@ header .profile{
     margin-top: 1rem;
 
 }
-
+/*-------------------------------Quick view on dish--------------------------------------*/
 
 .quick-view form{
     max-width: 40rem;
@@ -764,8 +764,8 @@ header .profile{
     font-size: 1.8rem;
     color:var(--black);
  }
- 
-
+ /*-------------------------------Cart--------------------------------------*/
+.dishes .cart
  
  
  
