@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
          if($select_user->rowCount() > 0){
             $_SESSION['user_id'] = $row['id'];
             $message[] = 'register successfully!';
-            header('location:home.php');
+            header('location:login.php');
          }
       }
    }

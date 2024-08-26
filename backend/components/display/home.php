@@ -90,7 +90,7 @@ include 'user_header.php'
         <?php foreach ($dishes as $dish) { ?>
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-eye"></a>
+            <a href="quick_view.php?pid=<?= $dish['product_id']; ?>" class="fas fa-eye"></a>
             <img src="uploads/<?php echo htmlspecialchars($dish['image']); ?>" alt=""> 
             <h3><?php echo htmlspecialchars($dish['product_name']); ?></h3>
             <div class="stars">
@@ -159,7 +159,7 @@ include 'user_header.php'
             <img src="uploads/cat-fastfood.png" alt="">
             <h3>Fast food</h3>
         </a>
-        <a href="menu.php?category=main%20dishes" class="box">
+        <a href="menu.php?category=main%20dish" class="box">
             <img src="uploads/cat-maindish.png" alt="">
             <h3>main dishes</h3>
         </a>

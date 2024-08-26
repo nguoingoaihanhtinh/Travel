@@ -8,11 +8,6 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
-include 'add_cart.php';
-
-include 'header.php';
-?>
-<?php
 $sql = "SELECT product_id,category_id,product_name,price,image,product_rating FROM tbl_product";
 $result = $conn->query($sql);
 $stmt = $conn->prepare($sql);
@@ -20,6 +15,25 @@ $stmt->execute();
 
 $dishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+    <script src="https://kit.fontawesome.com/2b51d69771.js" crossorigin="anonymous"></script>
+    <!-- <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> -->
+    <link rel = "stylesheet" href="phpstyle.css?v=<?php echo time(); ?>">
+   
+    <title>home</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    
+<?php 
+include 'user_header.php'
+?>
+
 <!-- Heading start -->
 <div class="head-page">
     <h3>Menu</h3>
@@ -108,9 +122,9 @@ $dishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
         <div class="box">
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-eye"></a>
+            <a href="quick_view.php?pid=<?= $dish['product_id']; ?>" class="fas fa-eye"></a>
             <img src="uploads/<?php echo htmlspecialchars($dish['image']); ?>" alt=""> 
-            <h1><?php echo htmlspecialchars($dish['category_id']); ?></h1>
+            <h1><?php echo htmlspecialchars($dish['category_name']); ?></h1>
             <h3><?php echo htmlspecialchars($dish['product_name']); ?></h3>
             <div class="stars">
                 <?php 
@@ -144,58 +158,6 @@ $dishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
-<!-- Footer section starts-->
-<section class="footer" id="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3>locations</h3>
-            <a href="#">vietnam</a>
-            <a href="#">japan</a>
-            <a href="#">chinese</a>
-            <a href="#">united state</a>
-        </div>
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#">home</a>
-            <a href="#">dishes</a>
-            <a href="#">about</a>
-            <a href="#">menu</a>
-            <a href="#">review</a>
-            <a href="#">order</a>
-        </div>
-        <div class="box">
-            <h3>contact info</h3>
-            <a href="#">+123-456-7890</a>
-            <a href="#">lorakitchen@gmail.com</a>
-        </div>
-        <div class="box">
-            <h3>Follow us</h3>
-            <a href="#">facebook</a>
-            <a href="#">twitter</a>
-            <a href="#">instagram</a>
-        </div>
-    </div>
-    <div class="credit">copy right @ 2024 by <span>Sir Lora</span></div>
- </section>
-<!-- Footer section ends-->
-
 <!-- Loader-->
 <div class="loader-container">
     <img src="" alt="">
@@ -204,9 +166,13 @@ $dishes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+<?php 
+include 'footer.php';
+?>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="js/admin_script.js?v=1"></script>
 </body>
 
 </html>

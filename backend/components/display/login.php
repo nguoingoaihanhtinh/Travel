@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
       var_dump($user_id);
       
       $message[] = "login successfully!";
-      //header('location:home.php');
+      header('location:home.php');
    }else{
       $message[] = 'incorrect username or password!';
    }

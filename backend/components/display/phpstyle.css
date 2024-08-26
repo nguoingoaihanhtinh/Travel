@@ -708,7 +708,67 @@ header .profile{
 }
 
 
+.quick-view form{
+    max-width: 40rem;
+    padding:2rem;
+    border: .2rem solid rgba(0,0,0,.2);
+    position: relative;
+    margin:0 auto;
+    text-align: center;
+ }
+ 
+ .quick-view form img{
+    height: 25rem;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 1rem;
+ }
+ 
+ .quick-view form .cat{
+    font-size: 1.8rem;
+    color:var(--light-color);
+    align-items: center;
+ }
+ 
+ .quick-view form .cat:hover{
+    color:var(--black);
+    text-decoration: underline;
+ }
+ 
+ .quick-view form .name{
+    font-size: 2rem;
+    margin:.5rem 0;
+ }
+ 
+ .quick-view form .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1.5rem;
+    margin:1rem 0;
+ }
+ 
+ .quick-view form .flex .price{
+    font-size: 2.5rem;
+    color:var(--black);
+ }
+ 
+ .quick-view form .flex .price span{
+    font-size: 2rem;
+    color:var(--light-color);
+ }
+ 
+ .quick-view form .flex .qty{
+    border:.1rem solid rgba(0,0,0,.8);
+    padding:1rem;
+    font-size: 1.8rem;
+    color:var(--black);
+ }
+ 
 
+ 
+ 
+ 
 
 
 
