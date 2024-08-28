@@ -19,8 +19,6 @@ if(isset($message)){
 
 <!-- header section start -->
 <header>
-
-
     <a href="home.php" class="logo"><i class="fa-solid fa-utensils"></i>UncleLora</a>
     <nav class="navbar">
         <a class="active" href="home.php">Home</a>
@@ -43,13 +41,6 @@ if(isset($message)){
         <!-- <a href="#" class="fas fa-heart"></a> -->
         <i class="fas fa-user" id="user-btn"></i>
     </div>
-    <form action="" id="search-form">
-    <input type="search" placeholder="search here..." name="search-box" id="search-box">
-    <button type="submit" class="fas fa-search" name="search_btn"></button>
-    <i class="fas fa-times" id="close"></i>
-    </form>
-
-    
     <div class="profile">
          <?php
       
@@ -77,6 +68,11 @@ if(isset($message)){
          <?php
           }
          ?>
-      </div>
+    </div>
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="search-box" id="search-box">
+        <button type="submit" class="fas fa-search" name="search_btn"></button>
+        <i class="fas fa-times" id="close"></i>
+    </form>
 </header>
 

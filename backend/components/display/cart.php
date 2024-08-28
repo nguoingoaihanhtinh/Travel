@@ -85,10 +85,10 @@ include 'user_header.php'
                $grand_total += $sub_total;
             }
          }else{
-            echo '<p class="empty">your cart is empty</p>';
+            echo '<p style="color: red;"  class="heading">your cart is empty</p>';
          }
       ?>
-
+     
    </div>
 
    <div class="cart-total">
