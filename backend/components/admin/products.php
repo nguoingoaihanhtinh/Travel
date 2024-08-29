@@ -18,6 +18,9 @@ if(isset($_POST['add_product'])){
    $price = filter_var($price, FILTER_SANITIZE_STRING);
    $category = $_POST['category'];
    $category = filter_var($category, FILTER_SANITIZE_STRING);
+   $rating = $_POST['rating'];
+   $rating = filter_var($rating, FILTER_SANITIZE_STRING);
+
 
    $image = $_FILES['image']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -25,23 +28,30 @@ if(isset($_POST['add_product'])){
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = '../display/uploads/'.$image;
 
-   $select_products = $conn->prepare("SELECT * FROM tbl_product WHERE product_name = ?");
-   $select_products->execute([$name]);
+   $select_category = $conn->prepare("SELECT category_id FROM tbl_category WHERE category_name = ?");
+   $select_category->execute([$category]);
+   
+   if($select_category->rowCount() > 0){
+      $category_id = $select_category->fetchColumn();
 
-   if($select_products->rowCount() > 0){
-      $message[] = 'product name already exists!';
-   }else{
-      if($image_size > 2000000){
-         $message[] = 'image size is too large';
+      $select_products = $conn->prepare("SELECT * FROM tbl_product WHERE product_name = ?");
+      $select_products->execute([$name]);
+
+      if($select_products->rowCount() > 0){
+         $message[] = 'product name already exists!';
       }else{
-         move_uploaded_file($image_tmp_name, $image_folder);
+         if($image_size > 2000000){
+            $message[] = 'image size is too large';
+         }else{
+            move_uploaded_file($image_tmp_name, $image_folder);
 
-         $insert_product = $conn->prepare("INSERT INTO tbl_product(product_name, category, price, image) VALUES(?,?,?,?)");
-         $insert_product->execute([$name, $category, $price, $image]);
-
-         $message[] = 'new product added!';
+            $insert_product = $conn->prepare("INSERT INTO tbl_product(product_name, category_id, price, image, product_rating) VALUES(?,?,?,?,?)");
+            $insert_product->execute([$name, $category_id, $price, $image, $rating]);
+            $message[] = 'new product added!';
+         }
       }
-
+   } else {
+      $message[] = 'Category not found!';
    }
 
 }
@@ -90,6 +100,7 @@ if(isset($_GET['delete'])){
       <h3>add product</h3>
       <input type="text" required placeholder="enter product name" name="name" maxlength="100" class="box">
       <input type="number" min="0" max="9999999999" required placeholder="enter product price" name="price" onkeypress="if(this.value.length == 10) return false;" class="box">
+      <input type="float" required placeholder="enter product rating" name="rating" maxlength="100" class="box">
       <select name="category" class="box" required>
          <option value="" disabled selected>select category --</option>
          <option value="main dish">main dish</option>
@@ -126,6 +137,7 @@ if(isset($_GET['delete'])){
       <div class="flex">
          <div class="price"><span>$</span><?= $fetch_products['price']; ?><span>/-</span></div>
          <div class="category"><?= $fetch_products['category_name']; ?></div>
+         <div class="rating"><?= $fetch_products['product_rating']; ?></div>
       </div>
       <div class="name"><?= $fetch_products['product_name']; ?></div>
       <div class="flex-btn">

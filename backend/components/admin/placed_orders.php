@@ -14,11 +14,12 @@ if(isset($_POST['update_payment'])){
 
    $order_id = $_POST['order_id'];
    $payment_status = $_POST['payment_status'];
-   $update_status = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
+   $update_status = $conn->prepare("UPDATE tbl_order SET payment_status = ? WHERE order_id = ?");
    $update_status->execute([$payment_status, $order_id]);
    $message[] = 'payment status updated!';
 
 }
+
 
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];

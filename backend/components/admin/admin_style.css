@@ -380,7 +380,11 @@ header .flex .profile.active{
    color:var(--black);
    margin:.5rem 0;
 }
-
+.show-products .box-container .box .flex .rating{
+   font-size: 2rem;
+   color:var(--black);
+   margin:.5rem 0;
+}
 .show-products .box-container .box .flex .price span{
    font-size: 1.5rem;
 }
